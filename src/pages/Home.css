@@ -1,90 +1,77 @@
 /* src/pages/Profile.css */
-  .container {
+.home-container {
     max-width: 800px;
     margin: 0 auto;
   }
   
-  .profile {
+  .home {
     background-color: #fff;
     padding: 20px;
     margin-top: 20px;
     margin-left: 250px;
   }
   
-  .profile-header {
+  .home-header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
   
-  .profile-image {
-    width: 150px;
-    height: 150px;
+  .home-image {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     overflow: hidden;
-    margin-right: 80px;
+    margin-right: 8px;
   }
   
-  .profile-image img {
+  .home-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .profile-info strong {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 300;
-  }
-  
-  .profile-info p {
-    margin: 0;
-  }
-  
-  .profile-info button {
-    border: none;
-    border-radius: 7px;
-    padding: 8px 15px 5px 15px;
-    margin-left: 10px;
-    font-size: 14px;
+  .home-info span {
+    margin-left: 3px;
+    font-size: 13px;
     font-weight: bold;
   }
 
-  .profile-stats {
+  .home-stats {
     display: flex;
   }
   
-  .profile-stats div {
+  .home-stats div {
     margin-right: 20px;
     margin-top: 20px;
   }
   
-  .profile-stats div:last-child {
+  .home-stats div:last-child {
     margin-right: 0;
   }
   
-  .profile-stats strong {
+  .home-stats strong {
     font-size: 1.0em;
     font-weight: 510;
   }
   
-  .profile-posts {
+  .home-posts {
     margin-top: 20px;
   }
   
-  .profile-posts hr {
+  .home-posts hr {
     margin-top: 70px;
     margin-bottom: 20px;
     color: #999;
   }
 
-  .posts-list {
+  .home-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto, 1fr);
     grid-gap: 7px;
 }
   
-  .posts-list h3 {
+  .home-list h3 {
     margin: 0 0 10px;
   }
