@@ -1,0 +1,34 @@
+.m-sidebar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 73px;
+    bottom: 0;
+    width: 397px;
+    /* 사이드바의 너비 */
+    background-color: #fff;
+    /* 사이드바의 배경색 */
+    border-right: 1px solid #ddd;
+    /* 사이드바의 테두리 */
+    padding: 20px 20px 20px 0px;
+    overflow-y: auto;
+    /* 내용이 넘칠 경우 스크롤 가능하도록 */
+    overflow-x: hidden;
+}
+
+.ms-container {
+    width: 397px;
+    padding-top: 5px;
+    padding-left: 13px;
+}
+
+.ms {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.ms-header {
+    display: flex;
+    justify-content: space-between; /* 내부 요소를 좌우로 분산 배치 */
+    align-items: center; /* 내부 요소를 수직 중앙 정렬 */
+}

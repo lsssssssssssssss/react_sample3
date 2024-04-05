@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Post from '../components/Menu';
 import './Profile.css'; // 프로필 페이지 스타일 import
 import { FaPlus } from 'react-icons/fa'; // 추가 아이콘 import
+import Navbar from '../components/Navbar';
 
 const Profile = () => {
     const [userList, setUserList] = useState([]);
@@ -19,23 +20,18 @@ const Profile = () => {
     },[]);
  
   const list = [
-      {id: 1, title: '첫 번째 게시물', content: '첫 번째 게시물입니다.'},
-      {id: 2, title: '두 번째 게시물', content: '두 번째 게시물입니다.'},
-      {id: 3, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 4, title: '두 번째 게시물', content: '두 번째 게시물입니다.'},
-      {id: 5, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 6, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 7, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 8, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 9, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 10, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 11, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 12, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
-      {id: 13, title: '세 번째 게시물', content: '세 번째 게시물입니다.'},
+      {id: 1, src: '/img/hello.PNG', content: '첫 번째 게시물입니다.'},
+      {id: 2, src: '/img/hello1.PNG', content: '두 번째 게시물입니다.'},
+      {id: 3, src: '/img/hello2.PNG', content: '세 번째 게시물입니다.'},
+      {id: 4, src: '/img/hello3.PNG', content: '두 번째 게시물입니다.'},
+      {id: 5, src: '/img/hello4.PNG', content: '세 번째 게시물입니다.'},
+      {id: 6, src: '/img/hello5.PNG', content: '세 번째 게시물입니다.'},
+      {id: 7, src: '/img/hello6.PNG', content: '세 번째 게시물입니다.'},
   ];
 
   return (
     <div className="container">
+      <Navbar />
       <div className="profile">
         <div className="profile-header">
           <div className="profile-image">
@@ -69,7 +65,9 @@ const Profile = () => {
           <hr />
           <div className="posts-list">
             {list.map(post => (
-              <Post key={post.id} title={post.title} content={post.content} />
+              <div key={post.id}>
+                <img src={post.src} alt='게시글 이미지' />
+              </div>
             ))}
           </div>
         </div>
