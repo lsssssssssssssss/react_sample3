@@ -1,0 +1,151 @@
+.msg-container {
+    padding-left: 470px;
+}
+
+.msg-header {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 5px;
+}
+
+.msg-header-image img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border : 0.5px solid #ddd;
+}
+
+.msg-header-name {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.msg-section-header {
+    padding-top: 30px;
+    text-align: center;
+}
+
+.msg-section-image img {
+    width: 93px;
+    height: 93px;
+    object-fit: cover;
+    border-radius: 50%;
+    border : 0.5px solid #ddd;
+}
+
+.message-container {
+    display: flex;
+    width: 100%;
+    height: 55%;
+    padding-left: 470px;
+    z-index: -1;
+    flex-direction: column; /* 아래에서 위로 정렬 */
+    align-items: center; /* 가운데 정렬 */
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 75px;
+    overflow-y: scroll; /* 세로 스크롤 생성 */
+    scrollbar-width: none; /* Firefox에서 기본 스크롤바 숨기기 */
+    -ms-overflow-style: none; /* IE/Edge에서 기본 스크롤바 숨기기 */
+    ::-webkit-scrollbar {
+        display: none; /* ::webkit 스크롤 막대 숨기기 */
+    }
+}
+
+.message-section-date {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.message {
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    max-width: 70%; /* 최대 너비 설정 */
+    background-color: rgb(66 149 246);
+    font-size: 14px;
+    color: #fff;
+}
+
+.message-tag-l {
+    align-self: flex-start; /* 왼쪽 정렬 */
+}
+
+.message-tag-r {
+    align-self: flex-end; /* 왼쪽 정렬 */
+}
+
+.left {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.right {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.message-date-l {
+    font-size: 11px;
+    color: #555;
+    margin-left: 7px;
+}
+
+.message-date-r {
+    font-size: 11px;
+    color: #555;
+    margin-right: 7px;
+}
+
+.message-input {
+    width: 1345px;
+    margin: 20px 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: none;
+    padding: 9px 9px 9px 25px;
+}
+
+.message-input:focus {
+    width: 1345px;
+    margin: 20px 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: none;
+    padding: 9px 9px 9px 25px;
+    outline: none;
+}
+
+.message-btn {
+    border: none;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 44px;
+    padding-right: 20px;
+    color: rgb(66 149 246);
+    font-weight: bold;
+    font-size: 14px;
+    padding-top: 3px;
+}
+
+.message-send {
+    position: fixed;
+    bottom: 0;
+    margin-left: 15px;
+}

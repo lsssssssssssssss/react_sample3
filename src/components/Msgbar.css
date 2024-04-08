@@ -32,3 +32,20 @@
     justify-content: space-between; /* 내부 요소를 좌우로 분산 배치 */
     align-items: center; /* 내부 요소를 수직 중앙 정렬 */
 }
+
+.ms-profile {
+    display: flex;
+    width: 397px;
+    height: 100%;
+    /* background-color: #eee; */
+    margin-left: -23px;
+    padding: 10px 10px 10px 23px;
+}
+
+.ms-profile img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 0.5px solid #ddd;
+  }

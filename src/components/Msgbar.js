@@ -20,9 +20,31 @@ export default function Msgbar() {
                         </div>
                         <div style={{fontSize:'23px'}}><FontAwesomeIcon icon={faPenToSquare} /></div>
                     </div>
-                    <div>
-                        <div>
+                    <div style={{marginBottom:'10px'}}>
+                        <div style={{marginTop:'18px', fontWeight:'bold'}}>
                             메시지
+                        </div>
+                    </div>
+                    <div className="ms-profile">
+                        <div>
+                            <img src="/img/hello.PNG" />
+                        </div>
+                        <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
+                            문재인
+                            <div style={{paddingTop:'5px', fontSize:'12px', color:'#888'}}>
+                                나 : Helloㆍ3일
+                            </div>
+                        </div>
+                    </div>
+                    <div className="ms-profile">
+                        <div>
+                            <img src="/img/hello2.PNG" />
+                        </div>
+                        <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
+                            이재명
+                            <div style={{paddingTop:'5px', fontSize:'12px', color:'#888'}}>
+                                나 : Helloㆍ3일
+                            </div>
                         </div>
                     </div>
                 </div>

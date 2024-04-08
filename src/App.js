@@ -6,7 +6,7 @@ import Profile from './pages/Profile';
 import Explore from './pages/Explore'
 import Message from './pages/Message';
 // import Navbar from './components/Navbar';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router, useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
                 <Route path='/' element={<Home />} />
                 <Route path='/profile' element={<Profile />} />
                 <Route path='/explore' element={<Explore />} />
+                {/* <Route path='/search' element={<Message />} /> */}
                 <Route path='/message' element={<Message />} />
             </Routes>
         </Router>

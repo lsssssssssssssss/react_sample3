@@ -53,7 +53,7 @@ ul {
     display: flex;
     position: fixed;
     bottom: 0;
-    width: 100%; /* 사이드바 너비에 맞게 설정 */
+    width: 300px; /* 사이드바 너비에 맞게 설정 */
 }
 
 .s-more-link a {

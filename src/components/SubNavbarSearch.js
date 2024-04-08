@@ -3,20 +3,13 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import { AiOutlineHome, AiOutlineSearch, AiOutlineCompass, AiOutlineMail, AiOutlineBell, AiOutlinePlusSquare, AiOutlineUser, AiOutlineBars } from 'react-icons/ai';
 import { FaHome, FaSearch, FaCompass, FaEnvelope, FaBell, FaPlusSquare, FaUser, FaBars } from 'react-icons/fa';
 import './SubNavbar.css'; // Navbar의 CSS 파일
-import './Navbar.css'; // Navbar의 CSS 파일
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
-import SubNavbarSearch from "./SubNavbarSearch";
 
-export default function SubNavbar(){
+export default function SubNavbarSearch(props){
     const location = useLocation();
     const [activeTab, setActiveTab] = useState("");
     const [isLogoClicked, setIsLogoClicked] = useState(false);
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleSidebar = () => {
-        setIsOpen(!isOpen);
-    };
 
     useEffect(() => {
         setActiveTab(location.pathname);
@@ -30,8 +23,11 @@ export default function SubNavbar(){
         setIsLogoClicked(false);
     };
 
+    const handleClick = () => {
+        props.setIsOpen(false);
+    };
+
     return (
-        <>
         <nav className="s-sidebar">
             <ul>
                 <li>
@@ -39,24 +35,25 @@ export default function SubNavbar(){
                         onMouseDown={handleLogoClick}
                         onMouseUp={handleLogoRelease}
                         onMouseLeave={handleLogoRelease}
+                        onClick={handleClick}
                     >
                         <FontAwesomeIcon icon={faInstagram} />
                     </Link>
                 </li>
                 <li>
-                    <CustomNavLink to="/" iconActive={<FaHome />} iconInactive={<AiOutlineHome />}></CustomNavLink>
+                    <CustomNavLink to="/" iconActive={<FaHome />} iconInactive={<AiOutlineHome />} handleClick={handleClick}></CustomNavLink>
                 </li>
                 <li>
                     {/* <CustomNavLink to="/search" iconActive={<FaSearch />} iconInactive={<AiOutlineSearch />}></CustomNavLink> */}
-                    <a className="s-nav-link sb-nav-link" onClick={toggleSidebar}>
-                        <AiOutlineSearch />
+                    <a className="s-nav-link">
+                        <FaSearch />
                     </a>
                 </li>
                 <li>
-                    <CustomNavLink to="/explore" iconActive={<FaCompass />} iconInactive={<AiOutlineCompass />}></CustomNavLink>
+                    <CustomNavLink to="/explore" iconActive={<FaCompass />} iconInactive={<AiOutlineCompass />} handleClick={handleClick}></CustomNavLink>
                 </li>
                 <li>
-                    <CustomNavLink to="/message" iconActive={<FaEnvelope />} iconInactive={<AiOutlineMail />}></CustomNavLink>
+                    <CustomNavLink to="/message" iconActive={<FaEnvelope />} iconInactive={<AiOutlineMail />} handleClick={handleClick}></CustomNavLink>
                 </li>
                 <li>
                     {/* <CustomNavLink to="/notifications" iconActive={<FaBell />} iconInactive={<AiOutlineBell />}></CustomNavLink> */}
@@ -71,7 +68,7 @@ export default function SubNavbar(){
                     </a>
                 </li>
                 <li>
-                    <CustomNavLink to="/profile" iconActive={<FaUser />} iconInactive={<AiOutlineUser />}></CustomNavLink>
+                    <CustomNavLink to="/profile" iconActive={<FaUser />} iconInactive={<AiOutlineUser />} handleClick={handleClick}></CustomNavLink>
                 </li>
                 <li className="s-more-link">
                     {/* <CustomNavLink to="/more" iconActive={<FaBars />} iconInactive={<AiOutlineBars />}></CustomNavLink> */}
@@ -81,20 +78,16 @@ export default function SubNavbar(){
                 </li>
             </ul>
         </nav>
-        <div className={`search-bar ${isOpen ? 'open' : ''}`}>
-            {isOpen && <SubNavbarSearch isOpen={isOpen} setIsOpen={setIsOpen} />}
-        </div>
-        </>
     );
 }
 
-function CustomNavLink({ to, iconActive, iconInactive, children }) {
+function CustomNavLink({ to, iconActive, iconInactive, children, handleClick }) {
     const location = useLocation();
     const isActive = location.pathname === to;
 
     return (
-        <NavLink to={to} className={`s-nav-link ${isActive ? "active" : ""}`}>
-            {isActive ? iconActive : iconInactive}
+        <NavLink to={to} className={`s-nav-link ${isActive ? "active" : ""}`} onClick={handleClick}>
+            {iconInactive}
             {children}
         </NavLink>
     );
