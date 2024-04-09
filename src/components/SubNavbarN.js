@@ -7,21 +7,50 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import SearchModal from "../pages/SearchModal";
 import MoreModal from "../pages/MoreModal";
-import SubNavbarN from "./SubNavbarN";
+import SubNavbarSearch from "./SubNavbarSearch";
 
-export default function SubNavbarSearch(props){
+export default function SubNavbarN(props){
     const location = useLocation();
     const [activeTab, setActiveTab] = useState("");
     const [isLogoClicked, setIsLogoClicked] = useState(false);
     let [modal, setModal] = useState(false);
     let [moreModal, setMoreModal] = useState(false);
     const moreRef = useRef(null);
-    const [isOpenN, setIsOpenN] = useState(false);
-    const nRef = useRef(null);
+    const searchRef = useRef(null);
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const handleClickOutsideMoreModal = (event) => {
+        // 검색창 외부를 클릭하고, 클릭한 요소가 검색창 자식 요소가 아니면 검색창을 닫습니다.
+        if (moreModal && moreRef.current && !moreRef.current.contains(event.target)) {
+            setMoreModal(false);
+        }
+        };
+        // document에 클릭 이벤트를 추가합니다.
+        document.addEventListener('mousedown', handleClickOutsideMoreModal);
+
+        // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거합니다.
+        return () => {
+        document.removeEventListener('mousedown', handleClickOutsideMoreModal);
+        };
+    }, [moreModal]);
 
     useEffect(() => {
         setActiveTab(location.pathname);
-    }, [location]);
+        const handleClickOutside = (event) => {
+        // 검색창 외부를 클릭하고, 클릭한 요소가 검색창 자식 요소가 아니면 검색창을 닫습니다.
+        if (isOpen && searchRef.current && !searchRef.current.contains(event.target)) {
+            setIsOpen(false);
+        }
+        };
+        // document에 클릭 이벤트를 추가합니다.
+        document.addEventListener('mousedown', handleClickOutside);
+
+        // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거합니다.
+        return () => {
+        document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen, location]);
 
     const handleLogoClick = () => {
         setIsLogoClicked(true);
@@ -43,41 +72,9 @@ export default function SubNavbarSearch(props){
         setMoreModal(!moreModal);
     };
 
-    const toggleSidebarN = () => {
-        setIsOpenN(!isOpenN);
+    const toggleSidebar = () => {
+        setIsOpen(!isOpen);
     };
-
-    useEffect(() => {
-        const handleClickOutsideMoreModal = (event) => {
-        // 검색창 외부를 클릭하고, 클릭한 요소가 검색창 자식 요소가 아니면 검색창을 닫습니다.
-        if (moreModal && moreRef.current && !moreRef.current.contains(event.target)) {
-            setMoreModal(false);
-        }
-        };
-        // document에 클릭 이벤트를 추가합니다.
-        document.addEventListener('mousedown', handleClickOutsideMoreModal);
-
-        // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거합니다.
-        return () => {
-        document.removeEventListener('mousedown', handleClickOutsideMoreModal);
-        };
-    }, [moreModal]);
-
-    useEffect(() => {
-        const handleClickOutsideN = (event) => {
-        // 검색창 외부를 클릭하고, 클릭한 요소가 검색창 자식 요소가 아니면 검색창을 닫습니다.
-        if (isOpenN && nRef.current && !nRef.current.contains(event.target)) {
-            setIsOpenN(false);
-        }
-        };
-        // document에 클릭 이벤트를 추가합니다.
-        document.addEventListener('mousedown', handleClickOutsideN);
-
-        // 컴포넌트가 언마운트될 때 이벤트 리스너를 제거합니다.
-        return () => {
-        document.removeEventListener('mousedown', handleClickOutsideN);
-        };
-    }, [isOpenN]);
 
     return (
         <>
@@ -98,8 +95,8 @@ export default function SubNavbarSearch(props){
                 </li>
                 <li>
                     {/* <CustomNavLink to="/search" iconActive={<FaSearch />} iconInactive={<AiOutlineSearch />}></CustomNavLink> */}
-                    <a className="s-nav-link" onClick={handleClick}>
-                        <FaSearch />
+                    <a className="s-nav-link" onClick={toggleSidebar}>
+                        <AiOutlineSearch />
                     </a>
                 </li>
                 <li>
@@ -110,8 +107,8 @@ export default function SubNavbarSearch(props){
                 </li>
                 <li>
                     {/* <CustomNavLink to="/notifications" iconActive={<FaBell />} iconInactive={<AiOutlineBell />}></CustomNavLink> */}
-                    <a className="s-nav-link" onClick={toggleSidebarN}>
-                        <AiOutlineBell />
+                    <a className="s-nav-link" onClick={handleClick}>
+                        <FaBell />
                     </a>
                 </li>
                 <li>
@@ -132,46 +129,34 @@ export default function SubNavbarSearch(props){
                 </li>
             </ul>
         </nav>
-        <div ref={nRef} className={`search-bar ${isOpenN ? 'open' : ''}`}>
-            {isOpenN && <SubNavbarN isOpen={isOpenN} setIsOpen={setIsOpenN} />}
+        <div ref={searchRef} className={`search-bar ${isOpen ? 'open' : ''}`}>
+            {isOpen && <SubNavbarSearch isOpen={isOpen} setIsOpen={setIsOpen} />}
             <div style={{fontSize: '24px', fontWeight: 'bold'}} className="sb-nav-link">
-                알림
+                검색
                 <div>
-                    <div style={{fontSize:'16px', fontWeight:'bold', paddingTop:'10px', paddingBottom:'10px'}}>오늘</div>
-                    <div className="ms-profile" style={{marginLeft:'-25px', paddingRight:'20px'}}>
+                    <input style={{fontSize:'16px',fontWeight:'normal'}} className="searchBox" type="text" placeholder="검색" />
+                    <button className="searchIcon"><AiOutlineSearch /></button>
+                    {/* <div style={{borderTop:'1px solid #ddd', width:'470px', marginLeft:'-98px', marginTop:'12px'}}></div> */}
+                    <div className="ms-profile" style={{backgroundColor:'#eee', marginLeft:'-25px'}}>
                         <div>
-                            <img src="/img/hello.PNG" style={{border:'none', width:'45px', height:'45px'}} />
+                            <img src="/img/hello.PNG" style={{border:'none', width:'48px', height:'48px'}} />
                         </div>
-                        <div style={{paddingLeft:'13px', fontSize:'14px', paddingTop:'3px'}}>
-                            lssss1sssszzzz
-                            <span style={{paddingTop:'0px', fontSize:'14px', fontWeight:'lighter'}}>
-                                님이 댓글을 남겼습니다: ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ
-                            </span>
-                            <span style={{color:'#777', fontSize:'13px', fontWeight:'normal'}}> 10분</span>
+                        <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
+                            lsssss
+                            <div style={{paddingTop:'0px', fontSize:'14px', color:'#777', fontWeight:'lighter'}}>
+                                문재인
+                            </div>
                         </div>
                     </div>
-                    <div className="ms-profile" style={{marginLeft:'-25px', paddingRight:'20px'}}>
+                    <div className="ms-profile" style={{marginLeft:'-25px'}}>
                         <div>
-                            <img src="/img/hello6.PNG" style={{border:'none', width:'45px', height:'45px'}} />
+                            <img src="/img/hello6.PNG" style={{border:'none', width:'48px', height:'48px'}} />
                         </div>
-                        <div style={{paddingLeft:'13px', fontSize:'14px', paddingTop:'3px'}}>
-                            lssss1ssssz1123123
-                            <span style={{paddingTop:'0px', fontSize:'14px', fontWeight:'lighter'}}>
-                                님이 회원님을 팔로우하기 시작했습니다.
-                            </span>
-                            <span style={{color:'#777', fontSize:'13px', fontWeight:'normal'}}> 10분</span>
-                        </div>
-                    </div>
-                    <div className="ms-profile" style={{marginLeft:'-25px', paddingRight:'20px'}}>
-                        <div>
-                            <img src="/img/hello4.PNG" style={{border:'none', width:'45px', height:'45px'}} />
-                        </div>
-                        <div style={{paddingLeft:'13px', fontSize:'14px', paddingTop:'3px'}}>
-                            lssss1ssssz1123123
-                            <span style={{paddingTop:'0px', fontSize:'14px', fontWeight:'lighter'}}>
-                                님이 회원님의 사진을 좋아합니다.
-                            </span>
-                            <span style={{color:'#777', fontSize:'13px', fontWeight:'normal'}}> 10분</span>
+                        <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
+                            helloworld
+                            <div style={{paddingTop:'0px', fontSize:'14px', color:'#777', fontWeight:'lighter'}}>
+                                이재명
+                            </div>
                         </div>
                     </div>
                 </div>

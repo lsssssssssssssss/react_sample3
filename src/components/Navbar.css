@@ -8,6 +8,7 @@
     border-right: 1px solid #ddd; /* 사이드바의 테두리 */
     padding: 20px 20px 20px 0px;
     overflow-y: auto; /* 내용이 넘칠 경우 스크롤 가능하도록 */
+    overflow-x: hidden;
 }
 
 ul {
@@ -98,6 +99,7 @@ ul {
 }
 
 .search-bar {
+    display: flex;
     position: fixed;
     top: 0;
     left: -470px; /* 왼쪽으로 숨겨진 상태 */
@@ -118,8 +120,35 @@ ul {
 }
 
 .sb-nav-link {
-    display: block;
-    color: white;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    padding:22px 0 50px 96px;
+}
+
+.searchBox {
+    width: 320px;
+    padding-left: 15px;
+    margin-top: 33px;
+    margin-left: -5px;
+    background-color: #eee;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border: none;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.searchBox:focus {
+    outline: none;
+    border: none;
+}
+
+.searchIcon {
+    width: 40px;
+    color: #999;
+    border: none;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background-color: #eee;
+    line-height: 30px;
+    padding-bottom: 7px;
+    margin-bottom: 13px;
 }
