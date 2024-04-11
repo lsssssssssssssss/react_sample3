@@ -7,7 +7,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRepeat } from '@fortawesome/free-solid-svg-icons';
 import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 
-export default function Msgbar() {
+const Msgbar = ({handleMsgTab1, handleMsgTab2, handleMsgTab3, msgTab}) => {
+    // const [msgTab, setMsgTab] = useState(0);
+
+    // const handleMsgTab1 = () => {
+    //     setMsgTab(1);
+    // };
+
+    // const handleMsgTab2 = () => {
+    //     setMsgTab(2);
+    // };
+
+    // const handleMsgTab3 = () => {
+    //     setMsgTab(3);
+    // };
 
     return (
         <div className="m-sidebar">
@@ -25,23 +38,34 @@ export default function Msgbar() {
                             메시지
                         </div>
                     </div>
-                    <div className="ms-profile">
+                    <div style={{cursor:'pointer'}} className={msgTab == 1 ? "ms-profile msg-tab" : "ms-profile"} onClick={handleMsgTab1}>
                         <div>
                             <img src="/img/hello.PNG" />
                         </div>
                         <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
-                            문재인
+                            홍길동
                             <div style={{paddingTop:'5px', fontSize:'12px', color:'#888'}}>
-                                나 : Helloㆍ3일
+                                나 : Helloㆍ1일
                             </div>
                         </div>
                     </div>
-                    <div className="ms-profile">
+                    <div style={{cursor:'pointer'}} className={msgTab == 2 ? "ms-profile msg-tab" : "ms-profile"} onClick={handleMsgTab2}>
                         <div>
                             <img src="/img/hello2.PNG" />
                         </div>
                         <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
-                            이재명
+                            유재석
+                            <div style={{paddingTop:'5px', fontSize:'12px', color:'#888'}}>
+                                나 : Helloㆍ2일
+                            </div>
+                        </div>
+                    </div>
+                    <div style={{cursor:'pointer'}} className={msgTab == 3 ? "ms-profile msg-tab" : "ms-profile"} onClick={handleMsgTab3}>
+                        <div>
+                            <img src="/img/hello7.PNG" />
+                        </div>
+                        <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
+                            신예은
                             <div style={{paddingTop:'5px', fontSize:'12px', color:'#888'}}>
                                 나 : Helloㆍ3일
                             </div>
@@ -52,3 +76,5 @@ export default function Msgbar() {
         </div>
     );
 }
+
+export default Msgbar;

@@ -5,6 +5,8 @@ import { FaRegHeart, FaRegComment, FaHeart } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-regular-svg-icons';
+import ImageModal from './ImageModal';
+import './Profile.css';
 
 const Home = () => {
   const [userList, setUserList] = useState([]);
@@ -22,13 +24,20 @@ const Home = () => {
   }, []);
 
   const [list, setList] = useState([
-    { id: 1, src: '/img/hello.PNG', content: '첫 번째 게시물입니다.', isLiked: false },
-    { id: 2, src: '/img/hello1.PNG', content: '두 번째 게시물입니다.', isLiked: false },
-    { id: 3, src: '/img/hello6.PNG', content: '세 번째 게시물입니다.', isLiked: false },
-    { id: 4, src: '/img/hello2.PNG', content: '두 번째 게시물입니다.', isLiked: false },
-    { id: 5, src: '/img/hello4.PNG', content: '세 번째 게시물입니다.', isLiked: false },
-    { id: 6, src: '/img/hello5.PNG', content: '세 번째 게시물입니다.', isLiked: false },
-    { id: 7, src: '/img/hello3.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'lsssss', src: '/img/hello.PNG', content: '첫 번째 게시물입니다.', isLiked: false },
+    { id: 'tkwk1_tkwk', src: '/img/hi5.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'shinyeeun', src: '/img/hello7.PNG', content: '두 번째 게시물입니다.', isLiked: false },
+    { id: 'world_hello', src: '/img/hi6.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'helloworld', src: '/img/hello6.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'app_le', src: '/img/hi3.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'hihihi', src: '/img/hello2.PNG', content: '두 번째 게시물입니다.', isLiked: false },
+    { id: 'hello_world', src: '/img/hi1.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'apple', src: '/img/hello4.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'zmzm_zmzm', src: '/img/hi4.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'xxxibgdrgn', src: '/img/hello5.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'hih_ihi', src: '/img/hi2.PNG', content: '두 번째 게시물입니다.', isLiked: false },
+    { id: 'worldhello', src: '/img/hello1.PNG', content: '세 번째 게시물입니다.', isLiked: false },
+    { id: 'tkwk__tkwk', src: '/img/hello3.PNG', content: '세 번째 게시물입니다.', isLiked: false },
   ]);
 
   const handleLikeClick = (id) => {
@@ -47,26 +56,34 @@ const Home = () => {
     setComment(event.target.value);
   };
 
+  const [imgModals, setImgModals] = useState(Array(list.length).fill(false));
+
+  const toggleImgModal = (index) => {
+    const newModals = [...imgModals];
+    newModals[index] = !newModals[index];
+    setImgModals(newModals);
+  };
+
   return (
     <div className="home-container">
       <Navbar />
-      {list.map((item) => (
-      <div key={item.id} className="home">
+      {list.map((post, index) => (
+      <div key={post.id} className="home">
         <div className="home-header">
           <div className="home-image">
-            <img style={{ cursor: 'pointer' }} src="/img/hello.PNG" alt="프로필 이미지" />
+            <img style={{ cursor: 'pointer' }} src={post.src} alt="프로필 이미지" />
           </div>
           <div className="home-info">
-            <span>lsssss</span>
+            <span>{post.id}</span>
             <span style={{ color: '#888' }}> ㆍ</span>
             <span style={{ color: '#888', fontWeight: 'normal', marginLeft: '-1px' }}>3일</span>
           </div>
         </div>
         <div className="home-posts">
-          <img src={item.src} alt='게시글 이미지' />
+          <img src={post.src} alt='게시글 이미지' />
           <div className='home-posts-icon'>
-            <span style={{ cursor: 'pointer', marginRight: '12px' }} onClick={() => handleLikeClick(item.id)}>
-              {item.isLiked ? <FaHeart className="liked" /> : <FaRegHeart className='noLiked' />}
+            <span style={{ cursor: 'pointer', marginRight: '12px' }} onClick={() => handleLikeClick(post.id)}>
+              {post.isLiked ? <FaHeart className="liked" /> : <FaRegHeart className='noLiked' />}
             </span>
             <span style={{ cursor: 'pointer', marginRight: '12px' }}>
               <FaRegComment />
@@ -81,10 +98,10 @@ const Home = () => {
             </strong>
           </div>
           <span style={{ fontSize: '13px', fontWeight: 'bold', marginTop: '5px' }}>
-            lsssss
+            {post.id}
           </span>
           <span style={{ fontSize: '13.5px', fontWeight: 'lighter', marginLeft: '5px' }}>Celebrating the new prada Re-Nylon Bag.</span>
-          <div style={{ fontSize: '14px', color: '#888', margin: '4px 0 2px 0', cursor:'pointer' }}>
+          <div style={{ fontSize: '14px', color: '#888', margin: '4px 0 2px 0', cursor:'pointer' }} onClick={() => toggleImgModal(index)}>
             댓글 10개 모두 보기
           </div>
           <div style={{ width: '468px', borderBottom:'1px solid #ddd', paddingBottom:'15px' }}>
@@ -104,6 +121,10 @@ const Home = () => {
             )}
           </div>
         </div>
+        {imgModals[index] &&
+          <ImageModal id={post.id} src={post.src} isOpen={imgModals[index]} isClose={() => toggleImgModal(index)}>
+          </ImageModal>
+        }
       </div>
       ))}
     </div>

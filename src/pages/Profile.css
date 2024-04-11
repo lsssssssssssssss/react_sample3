@@ -85,14 +85,43 @@
     grid-gap: 4.5px;
   }
   
-  .posts-list img {
+  .posts-list .bsImg {
     width: 100%;
     /* height: 100%; */
     border: none;
-    height: 320px;
+    height: 332.34px;
     object-fit: cover;
   }
 
   .posts-list h3 {
     margin: 0 0 10px;
+  }
+
+  .image-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .text-overlay {
+    position: absolute;
+    width: 332.34px;
+    height: 332.34px;
+    margin-top: -332.34px;
+    background-color: rgba(0, 0, 0, 0.3); /* 텍스트 배경색 */
+    color: white; /* 텍스트 색상 */
+    padding: 10px;
+    text-align: center;
+    line-height: 300.34px;
+  }
+
+  .icon-overlay {
+    position: absolute;
+    width: 332.34px;
+    height: 332.34px;
+    margin-top: -332.34px;
+    color: white; /* 텍스트 색상 */
+    padding: 10px;
+    text-align: end;
+    font-size: 20px;
+    margin-left: -5px;
   }

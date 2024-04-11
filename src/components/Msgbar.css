@@ -42,6 +42,10 @@
     padding: 10px 10px 10px 23px;
 }
 
+.msg-tab {
+    background-color: #eee;
+}
+
 .ms-profile img {
     width: 55px;
     height: 55px;

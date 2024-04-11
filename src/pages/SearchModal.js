@@ -9,11 +9,10 @@ function SearchModal(props) {
    /* props로 넘어온 값이 true일때 아래 내용 출력 */
     return(
       <div className="modal-overlay" onClick={props.isClose}>
-        <div className="modal-content" onClick={(e) => {
+        <div className="modal-content">
+          <div className="modal-content-inner" onClick={(e) => {
           e.stopPropagation();
-          props.isClose();
           }}>
-          <div className="modal-content-inner">
             새 게시물 만들기
             <div style={{borderTop:'1px solid #ddd', width:'747px', marginLeft:'-11px', marginTop:'8px'}}></div>
             <div className='modal-main'>

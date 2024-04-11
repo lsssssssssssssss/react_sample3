@@ -8,6 +8,8 @@ import SearchModal from "../pages/SearchModal";
 import SubNavbarSearch from "./SubNavbarSearch";
 import SubNavbarN from "./SubNavbarN";
 import MoreModal from "../pages/MoreModal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar(){
     const location = useLocation();
@@ -154,16 +156,18 @@ export default function Navbar(){
                 <div>
                     <input style={{fontSize:'16px',fontWeight:'normal'}} className="searchBox" type="text" placeholder="검색" />
                     <button className="searchIcon"><AiOutlineSearch /></button>
-                    {/* <div style={{borderTop:'1px solid #ddd', width:'470px', marginLeft:'-98px', marginTop:'12px'}}></div> */}
-                    <div className="ms-profile" style={{backgroundColor:'#eee', marginLeft:'-25px'}}>
+                    <div style={{borderTop:'1px solid #ddd', width:'470px', marginLeft:'-98px', marginTop:'12px'}}></div>
+                    <div style={{fontSize:'16px', marginTop:'20px', marginBottom:'5px'}}>최근 검색 항목<span style={{color:'rgb(49 169 248)', fontSize:'14px', float:'right', marginRight:'20px', cursor:'pointer'}}>모두 지우기</span></div>
+                    <div className="ms-profile" style={{marginLeft:'-25px'}}>
                         <div>
                             <img src="/img/hello.PNG" style={{border:'none', width:'48px', height:'48px'}} />
                         </div>
                         <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
                             lsssss
                             <div style={{paddingTop:'0px', fontSize:'14px', color:'#777', fontWeight:'lighter'}}>
-                                문재인
+                                홍길동
                             </div>
+                            <div style={{position:'absolute', top:'221px', left:'425px', fontSize:'20px', color:'#666', cursor:'pointer'}}><FontAwesomeIcon icon={faTimes} /></div>
                         </div>
                     </div>
                     <div className="ms-profile" style={{marginLeft:'-25px'}}>
@@ -173,8 +177,9 @@ export default function Navbar(){
                         <div style={{paddingLeft:'10px', fontSize:'14px', paddingTop:'3px'}}>
                             helloworld
                             <div style={{paddingTop:'0px', fontSize:'14px', color:'#777', fontWeight:'lighter'}}>
-                                이재명
+                                유재석
                             </div>
+                            <div style={{position:'absolute', top:'289px', left:'425px', fontSize:'20px', color:'#666', cursor:'pointer'}}><FontAwesomeIcon icon={faTimes} /></div>
                         </div>
                     </div>
                 </div>

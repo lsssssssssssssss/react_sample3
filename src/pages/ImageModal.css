@@ -1,0 +1,107 @@
+.i-modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999999;
+  }
+  
+  .i-modal-content {
+    background-color: white; 
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+  }
+  
+  .i-modal-content-inner {
+    position: relative; 
+    width: 1418px;
+    height: 918px;
+    border-radius: 12px;
+  }
+  
+  .i-modal-close-button {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .i-modal-content-inner{
+    background-color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .i-modal-main {
+    display: flex;
+    height: 100%;
+    justify-content: flex-start; /* 수평 가운데 정렬 */
+    align-items: flex-start; /* 수직 가운데 정렬 */
+    flex-direction: row;
+  }
+
+  .i-modal-main img {
+    width: 918px;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .i-modal-cmt {
+    border-bottom: 1px solid #eee;
+    padding-right: 30px;
+  }
+
+  .i-modal-cmt img {
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 15px;
+    border: 1px solid #eee;
+  }
+
+  .i-modal-save {
+    display: flex;
+    height: 100%;
+    justify-content: flex-start; /* 수평 가운데 정렬 */
+    align-items: flex-start; /* 수직 가운데 정렬 */
+    flex-direction: column;
+  }
+
+  .i-modal-bottom {
+    display: flex;
+    justify-content: flex-start; /* 수평 가운데 정렬 */
+    align-items: flex-start; /* 수직 가운데 정렬 */
+    flex-direction: column;
+    position: fixed;
+    bottom: 30px;
+    width: 500px; /* 사이드바 너비에 맞게 설정 */
+    border-top: 1px solid #eee;
+    padding-left: 15px;
+    padding-top: 5px;
+  }
+
+  .i-modal-input {
+    width: 440px;
+    padding: 10px;
+    padding-left: 5px;
+    border: none;
+    font-size: 13px;
+  }
+
+  .i-modal-input:focus {
+    outline: none;
+    border: none;
+  }
