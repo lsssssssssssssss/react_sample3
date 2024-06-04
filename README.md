@@ -65,7 +65,7 @@
     <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/01f0757a-ddac-483e-bd92-991edc94a97d" width="200px;" />
     <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/8d544dde-b833-464e-b1d6-d5783f5045de" width="200px;" />
     <h4>상세 페이지 및 사이드바, 모달창</h4>
-    <div>게시글 클릭 시, 모달창을 통해 상세 페이지가 나오게 구현하였습니다. 탭 클릭 시, 사이드바가 변경되고 해당 탭들이 나오게 구현하였습니다.</div>
+    <div>게시글 클릭 시, 모달창을 통해 상세 페이지가 나오게 구현, 게시글 업로드 모달창 구현, 탭 클릭 시, 사이드바가 변경되고 해당 탭들이 나오게 구현하였습니다.</div>
     </div>
     <br />
     <br />
