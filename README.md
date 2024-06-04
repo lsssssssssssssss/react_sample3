@@ -75,6 +75,8 @@
     <h4>메시지 페이지</h4>
     <div>메시지 탭에서 메시지 목록을 탭으로 구분하였고, 로딩 시 스크롤이 최하단으로 내려오게 설정하였습니다.</div>
     </div>
+    <br />
+    <br />
     <div align="center">
     <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/cb87e383-a1c1-466f-b3cd-3ba09690f6ea" width="400px;" />
     <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/75bc5dc2-34bc-4406-8807-1d5a6e7edd20" width="400px;" />
