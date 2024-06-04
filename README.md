@@ -62,6 +62,7 @@
     <div align="center">
     <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/b8ce4ed7-9f95-4bd8-820f-427faf3928ee" width="600px;" />
     <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/842d5a2f-f8d3-4a8b-86a6-fa95fcee11e4" width="600px;" />
+        <br />
     <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/01f0757a-ddac-483e-bd92-991edc94a97d" width="200px;" />
     <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/8d544dde-b833-464e-b1d6-d5783f5045de" width="200px;" />
     <h4>상세 페이지 및 사이드바, 모달창</h4>
