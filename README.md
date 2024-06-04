@@ -60,11 +60,11 @@
     <br />
     <br />
     <div align="center">
-    <img src="https://github.com/lsssssssssssssss/miniProject1/assets/153085551/7baf3554-2b6c-4bb0-97f0-a4a757764d86" width="200px;" />
-    <img src="https://github.com/lsssssssssssssss/miniProject1/assets/153085551/d4804224-2b2f-4110-b380-7260a0575810" width="200px;" />
-    <img src="https://github.com/lsssssssssssssss/miniProject1/assets/153085551/fa0ba93e-45bc-4867-875e-a55295fb0abf" width="200px;" />
-    <img src="https://github.com/lsssssssssssssss/miniProject1/assets/153085551/e0ea36c5-01f5-4bed-8968-b643a6d375e0" width="200px;" />
-    <h4>고객 페이지</h4>
+    <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/b8ce4ed7-9f95-4bd8-820f-427faf3928ee" width="400px;" />
+    <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/842d5a2f-f8d3-4a8b-86a6-fa95fcee11e4" width="400px;" />
+    <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/01f0757a-ddac-483e-bd92-991edc94a97d" width="200px;" />
+    <img src="https://github.com/lsssssssssssssss/react_sample3/assets/153085551/8d544dde-b833-464e-b1d6-d5783f5045de" width="200px;" />
+    <h4>상세 페이지 및 사이드바, 모달창</h4>
     <div>회원가입 시 팝업창을 통한 아이디 중복체크와 패스워드는 정규식을 만족해야만 회원가입이 완료되게 구현하였고, 다음 API를 이용한 주소검색 팝업창을 통해 주소를 입력받게 구현하였습니다. 제품 페이지에서는 제품리스트를 선택할 수 있게 구현하였고, 제품 이미지와 수량, 제품 총액이 실시간으로 변경되게 구현하였습니다. 장바구니 버튼으로 장바구니로 이동을 통해 여러 제품을 한번에 구매 가능하게 구현하였고, 주문 완료시 제품 재고가 감소되게 구현하였습니다. 주문 내역 페이지에서는 총 주문내역이 모두 나오게 구현하였고, 프로필 수정페이지를 통한 개인정보를 수정할 수 있게 구현하였습니다. 로그아웃 클릭시에는 세션이 끊기고 메인페이지로 이동되게 구현하였습니다.</div>
     </div>
     <br />
